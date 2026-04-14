@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/flutter_validation.iml" filepath="$PROJECT_DIR$/flutter_validation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validators.iml" filepath="$PROJECT_DIR$/validators.iml" />
     </modules>
   </component>
 </project>

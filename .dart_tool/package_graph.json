@@ -1,11 +1,11 @@
 {
   "roots": [
-    "flutter_validation"
+    "flutter_validator_pro"
   ],
   "packages": [
     {
-      "name": "flutter_validation",
-      "version": "0.0.1",
+      "name": "flutter_validator_pro",
+      "version": "0.1.2",
       "dependencies": [
         "flutter"
       ],

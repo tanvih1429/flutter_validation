@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_validation/flutter_validation.dart';
+import 'package:flutter_validator_pro/flutter_validator_pro.dart';
 
 void main() {
   runApp(const MyApp());
@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   border: OutlineInputBorder(),
                 ),
                 validator: (value) {
-                  return Validators()
+                  return FlutterValidatorPro()
                       .emailValidator(value: value)
                       .isRequired()
                       .isValidEmail()
@@ -110,12 +110,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   labelText: "Password",
                   border: OutlineInputBorder(),
                 ),
-                validator: (value) {
-                  if (value == null || value.length < 6) {
-                    return "Password must be 6+ characters";
-                  }
-                  return null;
-                },
+                validator: (value) => FlutterValidatorPro()
+                    .passwordValidator(value: value)
+                    .isRequired()
+                    .validate(),
               ),
 
               const SizedBox(height: 16),
@@ -128,12 +126,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   labelText: "Confirm Password",
                   border: OutlineInputBorder(),
                 ),
-                validator: (value) {
-                  if (value != passwordController.text) {
-                    return "Passwords do not match";
-                  }
-                  return null;
-                },
+                validator: (value) => FlutterValidatorPro()
+                    .confirmPasswordValidator(
+                      password: passwordController.text,
+                      confirmPassword: value,
+                    )
+                    .isRequired()
+                    .matchesPassword()
+                    .validate(),
               ),
 
               const SizedBox(height: 24),
